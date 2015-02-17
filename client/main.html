@@ -1,0 +1,27 @@
+<head>
+  <title>proj-three</title>
+</head>
+
+<body>
+	<form>  
+		<h2>What is your starting station?</h2>
+		<select id='fromStation'>
+		  {{#each toStations}}
+		    {{> station}}
+		  {{/each}}
+		</select>
+
+		<h2>Where are you traveling to?</h2>
+		<select id="toStation">
+		  {{#each fromStations}}
+		    {{> station}}
+		  {{/each}}
+		</select>
+
+		<input type='submit'>
+	</form>
+</body>
+
+<template name="station">
+  <option value={{Code}}>{{Name}}</option>
+</template>
