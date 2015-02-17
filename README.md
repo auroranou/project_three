@@ -1,7 +1,11 @@
 #Final project for WDI
 ##Package notes:
 For API requests:
-    meteor add http
+```
+meteor add http
+```
 For security etc.:
-    meteor remove insecure
-    meteor remove autopublish
+```
+meteor remove insecure
+meteor remove autopublish
+```
