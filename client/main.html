@@ -3,6 +3,8 @@
 </head>
 
 <body>
+	<h1>Read n Ride</h1>
+
 	<form>  
 		<h2>What is your starting station?</h2>
 		<select id='fromStation'>
@@ -20,8 +22,21 @@
 
 		<input type='submit'>
 	</form>
+
+	{{#if travelTime}}
+		<p>Your estimated travel time is {{travelTime}} minutes</p>
+	{{/if}}
+
+	{{#if longReads}}
+		<p>Here are some things you could read:</p>
+		{{#each longReads}}
+			<p><a href={{articleUrl}}>{{title}}</a></p>
+			<p>{{author}} | {{source}} | {{pubDate}}</p>
+			<p>{{minuteLength}} minutes | {{wordLength}}</p>
+		{{/each}}
+	{{/if}}
 </body>
 
-<template name="station">
+<template name='station'>
   <option value={{Code}}>{{Name}}</option>
 </template>
