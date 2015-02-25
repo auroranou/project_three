@@ -12,8 +12,6 @@ Template.body.events({
       if (response) {
         Session.set('travelTime', response);
         Meteor.call('setLength', response, function(err, res) {
-          console.log('setLength called');
-          console.log(res);
           if (err) console.log('setLength: ', err);
           if (res) {
             Session.set('longReads', res);

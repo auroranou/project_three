@@ -1,42 +1,46 @@
 <head>
-  <title>proj-three</title>
+  <title>Read n Ride</title>
 </head>
 
 <body>
-	<h1>Read n Ride</h1>
+	<div class='container row'>
+		<h1>Read n Ride</h1>
 
-	<form>  
-		<h2>What is your starting station?</h2>
-		<select id='fromStation'>
-		  {{#each toStations}}
-		    {{> station}}
-		  {{/each}}
-		</select>
+		<form>
+				<h2>What is your starting station?</h2>
+				<select id='fromStation'>
+				  {{#each toStations}}
+				    {{> station}}
+				  {{/each}}
+				</select>
+				<h2>Where are you traveling to?</h2>
+				<select id="toStation">
+				  {{#each fromStations}}
+				    {{> station}}
+				  {{/each}}
+				</select>
+				<input type='submit' class='button radius'>
+		</form>
 
-		<h2>Where are you traveling to?</h2>
-		<select id="toStation">
-		  {{#each fromStations}}
-		    {{> station}}
-		  {{/each}}
-		</select>
+		{{#if travelTime}}
+			<p>Your estimated travel time is {{travelTime}} minutes.</p>
+		{{/if}}
 
-		<input type='submit'>
-	</form>
-
-	{{#if travelTime}}
-		<p>Your estimated travel time is {{travelTime}} minutes</p>
-	{{/if}}
-
-	{{#if longReads}}
-		<p>Here are some things you could read:</p>
-		{{#each longReads}}
-			<p><a href={{articleUrl}}>{{title}}</a></p>
-			<p>{{author}} | {{source}} | {{pubDate}}</p>
-			<p>{{minuteLength}} minutes | {{wordLength}}</p>
-		{{/each}}
-	{{/if}}
+		{{#if longReads}}
+			<p>Here are some things you could read:</p>
+			{{#each longReads}}
+				{{> longRead}}
+			{{/each}}
+		{{/if}}
+	</div>
 </body>
 
 <template name='station'>
   <option value={{Code}}>{{Name}}</option>
+</template>
+
+<template name='longRead'>
+	<h2><a href={{articleUrl}}>{{title}}</a></h2>
+	<p>{{author}} | <em>{{source}}</em> | {{pubDate}}</p>
+	<p>{{minuteLength}} minutes | {{wordLength}}</p>
 </template>
