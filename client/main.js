@@ -1,11 +1,20 @@
 Meteor.subscribe('stations');
 
 Template.body.events({
-  'submit form': function(event){
-    event.preventDefault();
-    var from = $('#fromStation').val();
-    var to = $('#toStation').val();
-    // console.log(from, to);
+  'click #drop1 li': function() {
+    // console.log('menu 1: ', $(this)[0]['Code'], $(this)[0]['Name']);
+    Session.set('fromStation', $(this)[0]['Code']);
+  },
+
+  'click #drop2 li': function() {
+    // console.log('menu 2: ', $(this)[0]['Code'], $(this)[0]['Name']);
+    Session.set('toStation', $(this)[0]['Code']);
+  },
+
+  'click #done': function() {
+    var from = Session.get('fromStation');
+    var to = Session.get('toStation');
+    console.log(from, to);
 
     Meteor.call('getTravelTime', from, to, function(error, response){
       if (error) console.log('getTravelTime: ', error);
