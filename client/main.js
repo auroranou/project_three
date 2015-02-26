@@ -33,7 +33,7 @@ Template.body.events({
         Meteor.call('setLength', response, function(err, res) {
           if (err) console.log('setLength: ', err);
           if (res) {
-            Session.set('longReads', res);
+            Session.set('longReads', res.slice(0,4));
           }
         });
       }
