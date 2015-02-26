@@ -42,10 +42,7 @@ Template.body.events({
 });
 
 Template.body.helpers({
-  fromStations: function() {
-    return Stations.find({}, {sort: {Name: 1}});
-  },
-  toStations: function() {
+  stations: function() {
     return Stations.find({}, {sort: {Name: 1}});
   },
   travelTime: function() {
