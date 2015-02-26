@@ -1,17 +1,27 @@
 Meteor.subscribe('stations');
 
 Template.body.events({
-  'click #drop1 li': function() {
-    // console.log('menu 1: ', $(this)[0]['Code'], $(this)[0]['Name']);
+  'click .start#dropdown': function() {
+    $('#drop').removeClass('hidden');
+  },
+
+  'click .from#drop li': function() {
+    console.log('from clicked');
     Session.set('fromStation', $(this)[0]['Code']);
+    $('#dropdown').text('Where are you going?');
+    $('#drop').removeClass('from').addClass('to');
   },
 
-  'click #drop2 li': function() {
-    // console.log('menu 2: ', $(this)[0]['Code'], $(this)[0]['Name']);
+  'click .to#drop li': function () {
+    console.log('to clicked');
     Session.set('toStation', $(this)[0]['Code']);
+    $('#dropdown').text('Go!').addClass('go').removeClass('start');
+    $('#drop').removeClass('to');
   },
 
-  'click #done': function() {
+  'click .go#dropdown': function() {
+    $('#dropdown').removeClass('go').addClass('start').text('Where are you now?');
+    $('#drop').addClass('hidden from');
     var from = Session.get('fromStation');
     var to = Session.get('toStation');
     console.log(from, to);

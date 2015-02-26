@@ -1,56 +1,41 @@
 <head>
-  <title>Read 'n Ride</title>
+  <title>read n ride</title>
 </head>
 
 <body>
 	<div class='container'>
 		<header class='row'>
-			<h1>Read 'n Ride</h1>
+			<h1>read n ride</h1>
 		</header>
 
 		<div class='row'>
-			<div class='small-12 medium-6 large-4 columns'>
-				<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown">Where are you now?</button><br>
-				<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+				<button id='dropdown' href="#" class='start'>Where are you now?</button><br>
+				<ul id="drop" class='hidden from'>
 				  {{#each fromStations}}
 				    {{> station}}
 				  {{/each}}
 				</ul>
-			</div>
-
-			<div class='small-12 medium-6 large-4 columns'>
-				<button href="#" data-dropdown="drop2" aria-controls="drop2" aria-expanded="false" class="button dropdown">What is your destination?</button><br>
-				<ul id="drop2" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
-				  {{#each toStations}}
-				    {{> station}}
-				  {{/each}}
-				</ul>
-			</div>
-
-			<div class='small-12 medium-12 large-4 columns'>
-				<button id='done' class='button'>Done!</button>
-			</div>
 		</div>
 
 		{{#if travelTime}}
-			<div class='row'>
+			<div class='row center'>
 				<h4>Your estimated travel time is {{travelTime}} minutes.</h4>
-				<h4 class='subheader'>Here are some things you could read:</h4>
+				<h4 class='sub'>Here are some things you could read:</h4>
 			</div>
 		{{/if}}
 
 		{{#if longReads}}
 			{{#each longReads}}
-				<div class='row'>
+				<div class='row article'>
 					{{> longRead}}
 				</div>
 			{{/each}}
 		{{/if}}
 	</div> <!-- close 'container' -->
 
-	<footer class='row'>
+<!-- 	<footer class='row'>
 		<img id='train' src="/train.png" alt='metro train'>
-	</footer>
+	</footer> -->
 </body>
 
 <template name='station'>
@@ -59,6 +44,5 @@
 
 <template name='longRead'>
 	<h3><a href={{articleUrl}}>{{title}}</a></h3>
-	<h5 class='subheader'>{{author}} | <em>{{source}}</em> | {{pubDate}}</h5>
-	<h5 class='subheader'>{{minuteLength}} minutes | {{wordLength}}</h5>
+	<h5>{{minuteLength}} minutes ({{wordLength}}) <span class='sub'>{{author}} | <em>{{source}}</em> | {{pubDate}}</span></h5>
 </template>
