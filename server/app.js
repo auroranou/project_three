@@ -42,11 +42,23 @@ Meteor.methods({
     if (data.statusCode == 200) {
       var dataJson = JSON.parse(data.content);
       console.log('longreads api response received');
-      return dataJson;
+      return Meteor.call('shuffleSlice', dataJson);
     } else {
       console.log('error in longreads api call:', data.statusCode);
       var errorJson = JSON.parse(data.content);
       throw new Meteor.Error(data.statusCode, errorJson.error);
     }
+  },
+
+  shuffleSlice: function(arr) {
+    var currentIndex = arr.length, tempVal, randIndex;
+    while (0 !== currentIndex) {
+      randIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      tempVal = arr[currentIndex];
+      arr[currentIndex] = arr[randIndex];
+      arr[randIndex] = tempVal;
+    }
+    return arr.slice(0,5);
   }
 });
