@@ -74,16 +74,14 @@ li {
 }
 
 button {
-  width: 30%;
+  display: block;
   border: none;
   border-radius: 2px;
   background-color: #3A83EE;
   color: #fff;
   font-family: 'Courier', monospace;
   font-size: 1em;
-  display: block;
   padding: 1em 0;
-  margin: 1em auto 2em auto;
 }
 
 button:hover{
@@ -92,7 +90,6 @@ button:hover{
 
 /* animations */
 #train {
-  width: 20%;
   display: block;
   margin: auto;
 /*  -webkit-animation: drive 10s ease infinite; 
@@ -122,15 +119,33 @@ button:hover{
   100% { margin-left: 0; }
 }*/
 
-/* media queries */
 @media only screen and (max-width: 30em) {
   button {
     margin: 1em auto;
+    width: 16em;
+  }
+
+  #train {
+    width: 50%;
   }
 }
 @media only screen and (min-width: 30.1em) {
- 
+  button {
+    margin: 1em auto;
+    width: 18em;
+  }
+
+  #train {
+    width: 37.5%;
+  }
 }
 @media screen and (min-width: 48em) {
-  
+  button {
+    margin: 1em auto 2em;
+    width: 20em;
+  }
+
+  #train {
+    width: 25%;
+  }
 }
