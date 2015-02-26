@@ -40,6 +40,10 @@ header {
   border-bottom: 1px solid #aaa;
 }
 
+footer {
+  padding: 2em 0;
+}
+
 /* smaller things */
 a {
   text-decoration: none;
@@ -60,7 +64,7 @@ a:hover {
 
 ul {
   list-style: none;
-  max-height: 40vh;
+  max-height: 50vh;
   overflow: scroll;
 }
 
@@ -70,6 +74,7 @@ li {
 }
 
 button {
+  width: 30%;
   border: none;
   border-radius: 2px;
   background-color: #3A83EE;
@@ -77,13 +82,45 @@ button {
   font-family: 'Courier', monospace;
   font-size: 1em;
   display: block;
-  padding: 1em;
+  padding: 1em 0;
   margin: 1em auto 2em auto;
 }
 
 button:hover{
   background-color: #216AD5;
 }
+
+/* animations */
+#train {
+  width: 20%;
+  display: block;
+  margin: auto;
+/*  -webkit-animation: drive 10s ease infinite; 
+  -moz-animation: drive 10s ease infinite; 
+  -o-animation: drive 10s ease infinite;
+  animation: drive 10s ease infinite; */
+}
+
+/*@-webkit-keyframes drive {
+  0%   { margin-left: 0; }
+  50%  { margin-left: 80%;}
+  100% { margin-left: 0; }
+}
+@-moz-keyframes drive {
+  0%   { margin-left: 0; }
+  50%  { margin-left: 80%;}
+  100% { margin-left: 0; }
+}
+@-o-keyframes drive {
+  0%   { margin-left: 0; }
+  50%  { margin-left: 80%;}
+  100% { margin-left: 0; }
+}
+@keyframes drive {
+  0%   { margin-left: 0; }
+  50%  { margin-left: 80%;}
+  100% { margin-left: 0; }
+}*/
 
 /* media queries */
 @media only screen and (max-width: 30em) {
