@@ -1,6 +1,7 @@
 <template name='list'>
   <div class='container'>
-    <div class='row center'>
+    <div class='row'>
+      {{> loginButtons}}
       <a href={{pathFor 'layout'}}>Home</a><br>
     </div>
 
@@ -9,12 +10,18 @@
     </header>
 
     <div class='row'>
-      {{#if lists}}
-        <h3><a href={{lists.articleUrl}}>{{lists.title}}</a></h3>
-        <h5>{{lists.minuteLength}} minutes ({{lists.wordLength}}) <span class='sub'>{{author}} | <em>{{lists.source}}</em> | {{lists.pubDate}}</span></h5>
+      {{#if currentUser}}
+        {{#if lists}}
+          <h3><a href={{lists.articleUrl}}>{{lists.title}}</a></h3>
+          <h5>{{lists.minuteLength}} minutes ({{lists.wordLength}}) <span class='sub'>{{lists.author}} | <em>{{lists.source}}</em> | {{lists.pubDate}}</span></h5>
+        {{else}}
+          <div class='center'>
+            <h4 class='sub'>You have no saved articles at this time.</h4>
+          </div>
+        {{/if}}
       {{else}}
         <div class='center'>
-          <h4 class='sub'>You have no saved articles at this time.</h4>
+          <h4 class='sub'>Please log in or sign up to view this page.</h4>
         </div>
       {{/if}}
     </div>
