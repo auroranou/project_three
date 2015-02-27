@@ -64,10 +64,8 @@ Meteor.methods({
 
   addToList: function(owner, article) {
     console.log('addToList called');
-    Lists.update(
-      { owner: owner },
-      { owner: owner, article: article },
-      { upsert: true }
+    Lists.insert(
+      { owner: owner, article: article }
     );
   },
 

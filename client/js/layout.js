@@ -39,8 +39,6 @@ Template.layout.events({
   },
 
   'click .save': function() {
-    // console.log($(this)[0]);
-    // console.log(Meteor.user());
     Meteor.call('addToList', Meteor.userId(), $(this)[0], function(err, res) {
       if (err) console.log(err);
     });
