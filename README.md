@@ -13,6 +13,12 @@ This app is my final project for General Assembly's Web Development Immersive. I
 + Users can log in
 + Users who are signed in can save articles to a personal list
 
+## Models and relationships:
+
++ Stations: a Mongo collection of all WMATA stations
++ Users: generated using Meteor's ```accounts-password``` package
++ Lists: arrays of articles owned by app users
+
 ## Technologies used:
 
 + Meteor.js
