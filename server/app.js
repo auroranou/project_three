@@ -60,5 +60,17 @@ Meteor.methods({
       arr[randIndex] = tempVal;
     }
     return arr.slice(0,5);
+  },
+
+  addToList: function(owner, article) {
+    console.log('addToList called');
+    Lists.update(
+      { owner: owner },
+      {
+        owner: owner,
+        articles: [article]
+      },
+      {upsert: true }
+    );
   }
 });

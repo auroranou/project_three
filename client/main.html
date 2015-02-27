@@ -5,6 +5,10 @@
 
 <body>
 	<div class='container'>
+		<div class='row'>
+			{{> loginButtons}}
+		</div>
+
 		<header class='row'>
 			<h1>read n ride</h1>
 		</header>
@@ -17,6 +21,12 @@
 				  {{/each}}
 				</ul>
 		</div>
+
+		{{#if lists}}
+			{{#each lists}}
+				{{> list}}
+			{{/each}}
+		{{/if}}
 
 		{{#if travelTime}}
 			<div class='row center'>
@@ -47,5 +57,12 @@
 
 <template name='longRead'>
 	<h3><a href={{articleUrl}}>{{title}}</a></h3>
+	{{#if currentUser}} 
+		<a href='#' class='save' id={{_id}}>Save this article</a>
+	{{/if}}
 	<h5>{{minuteLength}} minutes ({{wordLength}}) <span class='sub'>{{author}} | <em>{{source}}</em> | {{pubDate}}</span></h5>
+</template>
+
+<template name='list'>
+	{{owner}}
 </template>

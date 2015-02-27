@@ -1,4 +1,5 @@
 Meteor.subscribe('stations');
+Meteor.subscribe('lists');
 
 Template.body.events({
   'click .start#dropdown': function() {
@@ -38,6 +39,15 @@ Template.body.events({
         });
       }
     });
+  },
+
+  'click .save': function() {
+    console.log($(this)[0]);
+    console.log(Meteor.user());
+    // var ownerId = Lists.findOne({owner: Meteor.userId()});
+    Meteor.call('addToList', Meteor.userId(), $(this)[0], function(err, res) {
+      if (err) console.log(err);
+    });
   }
 });
 
@@ -50,5 +60,12 @@ Template.body.helpers({
   },
   longReads: function() {
     return Session.get('longReads');
+  },
+  lists: function() {
+    return Lists.find({});
   }
+});
+
+Accounts.ui.config({
+  passwordSignupFields: "USERNAME_ONLY"
 });
