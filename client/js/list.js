@@ -1,10 +1,13 @@
 Template.list.events({
-
+  'click .delete': function() {
+    if ($(this)[0]['owner'] === Meteor.userId()) {
+      Meteor.call('removeFromList', $(this)[0]['_id']);
+    }
+  }
 });
 
 Template.list.helpers({
   lists: function() {
-    var userList = Lists.findOne({ owner: Meteor.userId() });
-    return userList != undefined ? userList['articles'][0] : false;
+    return Lists.find({});
   }
 });

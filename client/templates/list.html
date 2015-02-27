@@ -12,8 +12,12 @@
     <div class='row'>
       {{#if currentUser}}
         {{#if lists}}
-          <h3><a href={{lists.articleUrl}}>{{lists.title}}</a></h3>
-          <h5>{{lists.minuteLength}} minutes ({{lists.wordLength}}) <span class='sub'>{{lists.author}} | <em>{{lists.source}}</em> | {{lists.pubDate}}</span></h5>
+          {{#each lists}}
+          <div class='article'>
+            <h3><a href={{article.articleUrl}}>{{article.title}}</a></h3> <a href='#' class='delete'>Delete this article</a>
+            <h5>{{article.minuteLength}} minutes ({{article.wordLength}}) <span class='sub'>{{article.author}} | <em>{{article.source}}</em> | {{article.pubDate}}</span></h5>
+          </div>
+          {{/each}}
         {{else}}
           <div class='center'>
             <h4 class='sub'>You have no saved articles at this time.</h4>
