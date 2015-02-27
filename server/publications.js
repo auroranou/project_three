@@ -3,5 +3,5 @@ Meteor.publish('stations', function(){
 });
 
 Meteor.publish('lists', function(){
-  return Lists.find({owner: this.userId});
+  return Lists.find({});
 })

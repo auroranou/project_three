@@ -66,11 +66,12 @@ Meteor.methods({
     console.log('addToList called');
     Lists.update(
       { owner: owner },
-      {
-        owner: owner,
-        articles: [article]
-      },
-      {upsert: true }
+      { owner: owner },
+      { upsert: true }
+    );
+    Lists.update(
+      { owner: owner },
+      { $addToSet: { articles: article} }
     );
   }
 });

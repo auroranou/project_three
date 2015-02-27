@@ -1,0 +1,28 @@
+<template name='list'>
+  <div class='container'>
+    <div class='row center'>
+      <a href={{pathFor 'layout'}}>Home</a><br>
+    </div>
+
+    <header class='row'>
+      <h1>read n ride</h1>
+    </header>
+
+    <div class='row'>
+      {{#if lists}}
+        <h3><a href={{lists.articleUrl}}>{{lists.title}}</a></h3>
+        <h5>{{lists.minuteLength}} minutes ({{lists.wordLength}}) <span class='sub'>{{author}} | <em>{{lists.source}}</em> | {{lists.pubDate}}</span></h5>
+      {{else}}
+        <div class='center'>
+          <h4 class='sub'>You have no saved articles at this time.</h4>
+        </div>
+      {{/if}}
+    </div>
+
+    <footer class='row'>
+      <img id='train1' src="/train1.png" alt='one metro train'>
+      <img id='train2' src="/train2.png" alt='two metro trains'>
+      <img id='train3' src="/train3.png" alt='three metro trains'>
+    </footer>
+  </div>
+</template>
