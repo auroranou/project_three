@@ -6,10 +6,12 @@ This app is my final project for General Assembly's Web Development Immersive. I
 
 ## User stories:
 
-+ Users can select their WMATA origin station
-+ Users can select their WMATA destination station
++ Users can select their WMATA origin and destination station
 + Users can view their estimated commute time
 + Users can view Longreads articles that match their predicted travel time
++ Users can sign up for an account
++ Users can log in
++ Users who are signed in can save articles to a personal list
 
 ## Technologies used:
 
@@ -21,6 +23,12 @@ For API requests:
 ```
 meteor add http
 ```
+
+For routing:
+```
+meteor add iron:router
+```
+
 For security etc.:
 ```
 meteor remove insecure
@@ -30,5 +38,5 @@ meteor remove autopublish
 ## Future additions?
 
 + User accounts and authentication with Twitter/Google/Facebook
-+ Ability for users to save or share articles
++ Ability for users share articles
 + Support for non-Metro public transit (i.e. bus commutes)
