@@ -5,9 +5,7 @@
       <a href={{pathFor 'layout'}}>Home</a><br>
     </div>
 
-    <header class='row'>
-      <h1>read n ride</h1>
-    </header>
+    {{> header}}
 
     <div class='row'>
       {{#if currentUser}}
@@ -30,10 +28,6 @@
       {{/if}}
     </div>
 
-    <footer class='row'>
-      <img id='train1' src="/train1.png" alt='one metro train'>
-      <img id='train2' src="/train2.png" alt='two metro trains'>
-      <img id='train3' src="/train3.png" alt='three metro trains'>
-    </footer>
+    {{> footer}}
   </div>
 </template>

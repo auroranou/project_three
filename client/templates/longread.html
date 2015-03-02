@@ -1,0 +1,7 @@
+<template name='longRead'>
+  <h3><a href={{articleUrl}}>{{title}}</a></h3>
+  {{#if currentUser}} 
+    <a href='#' class='save' id={{_id}}>Save this article</a>
+  {{/if}}
+  <h5>{{minuteLength}} minutes ({{wordLength}}) <span class='sub'>{{author}} | <em>{{source}}</em> | {{pubDate}}</span></h5>
+</template>

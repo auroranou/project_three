@@ -13,9 +13,7 @@
 			{{/if}}
 		</div>
 
-		<header class='row'>
-			<h1>read n ride</h1>
-		</header>
+		{{> header}}
 
 		<div class='row'>
 				<button id='dropdown' href="#" class='start'>Where are you now?</button><br>
@@ -41,22 +39,6 @@
 			{{/each}}
 		{{/if}}
 
-		<footer class='row'>
-			<img id='train1' src="/train1.png" alt='one metro train'>
-			<img id='train2' src="/train2.png" alt='two metro trains'>
-			<img id='train3' src="/train3.png" alt='three metro trains'>
-		</footer>
+		{{> footer}}
 	</div> <!-- close 'container' -->
-</template>
-
-<template name='station'>
-  <li value={{Code}}><a href='#'>{{Name}}</a></li>
-</template>
-
-<template name='longRead'>
-	<h3><a href={{articleUrl}}>{{title}}</a></h3>
-	{{#if currentUser}} 
-		<a href='#' class='save' id={{_id}}>Save this article</a>
-	{{/if}}
-	<h5>{{minuteLength}} minutes ({{wordLength}}) <span class='sub'>{{author}} | <em>{{source}}</em> | {{pubDate}}</span></h5>
 </template>
