@@ -44,5 +44,5 @@ meteor remove autopublish
 ## Future additions?
 
 + User accounts and authentication with Twitter/Google/Facebook
-+ Ability for users share articles
++ Ability for users to share articles
 + Support for non-Metro public transit (i.e. bus commutes)
