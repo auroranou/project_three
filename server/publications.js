@@ -1,5 +1,5 @@
 Meteor.publish('stations', function(){
-	return Stations.find({});
+  return Stations.find({});
 });
 
 Meteor.publish('lists', function(){
