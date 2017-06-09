@@ -1,4 +1,4 @@
-if (Stations.find().count() === 0) {
+if (!Stations.find().count()) {
   console.log('importing stationlist to db')
   var data = JSON.parse(Assets.getText('stationList.json'));
   data.forEach(function(e, i, a) {
