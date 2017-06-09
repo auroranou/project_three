@@ -1,0 +1,27 @@
+{
+  "name": "read-n-ride",
+  "version": "1.0.0",
+  "description": "Have something interesting to peruse during your commute! If you live in the DC area, enter your Metro stations and let Read n Ride fetch you long-form journalism stories to read.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.23.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auroranou/read-n-ride.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/auroranou/read-n-ride/issues"
+  },
+  "homepage": "https://github.com/auroranou/read-n-ride#readme"
+}
