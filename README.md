@@ -23,6 +23,14 @@ This app is my final project for General Assembly's Web Development Immersive. I
 
 + Meteor.js
 
+## Local development:
+```
+// install meteor then cd into directory
+meteor npm install
+meteor run
+// runs at localhost:3000
+```
+
 ## Package notes:
 
 For API requests:
